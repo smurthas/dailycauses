@@ -53,7 +53,7 @@ app.post('contribute', function(req, res) {
         name = res.body.name, 
         email = res.body.email, 
         hours = res.body.hours, 
-        dollars =  = res.body.dollars;
+        dollars = res.body.dollars;
     db.contribute(_id, name, email, hours, dollars, function(err) {
         res.writeHead(200);
         res.end();
