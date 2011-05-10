@@ -14,13 +14,14 @@ export.sendDailyEmails = function() {
   ];
   for (var i = 0; i < hoods.length; ++i) {
     var hood = hoods[i];
-    logic.getByHood(hood, function() {
+    logic.getByHood(hood, function(err, arr) {
+      // title, description, hood, numPeople, dollars
       mail.message({
-        from: 'sender@example.net',
-        to: ['recipient@somewhere.org'],
-        subject: 'Message for '
+        from: 'team@dailycauses.org',
+        to: [''],
+        subject: 'Messages in the '
       })
-      .body('Node speaks SMTP!')
+      .body('')
       .send(function(err) {
         if (err) throw err;
         console.log('Sent!');

@@ -16,13 +16,15 @@ var app = express.createServer(
     );
 
 
-app.post('/newcause', function(req, res) {
+app.post('/causes/:hood', function(req, res) {
+    var hood = req.params.hood;
+    
     var title = req.body.title;
     var desc = req.body.desc;
-    var hood = req.body.hood;
     var numPeople = req.body.numPeople;
     var dollars = req.body.dollars;
     //commit to DB
+    console.log(req.body);
     db.putInDB(title, desc, hood, numPeople, dollars, function() { 
         res.writeHead(200);
         res.end();
