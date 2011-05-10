@@ -49,5 +49,5 @@ app.post('/signup', function(req, res) {
 })
 
 db.openCollection(function() {
-    app.listen(8080);
+    app.listen(process.env.VMC_APP_PORT || 8080);
 });
