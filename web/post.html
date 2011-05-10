@@ -1,0 +1,55 @@
+<style>
+  label { font-weight: bold;}
+  .entry-form {padding-bottom: 15px;}
+</style>
+
+<div style="text-align:center; width:100%">
+  <a href="index.html">
+    <img src="images/logo.png" />
+  </a>
+</div>
+
+
+<div style="text-align:center;">
+
+<h1>Add a Cause</h1>
+  <form method="POST">
+    <div class="entry-form">
+      <label>San Francisco Neighborhood</label><br>
+
+      <select>
+        <option>Castro</option>
+        <option>Mission</option>
+        <option>Nob Hill</option>
+        <option>Sunset</option>
+        <option>Western Addition</option>
+      </select>
+    </div>
+    <div class="entry-form">
+      <label>Name</label>
+      <br>
+      <input style="width:500px;" name="name">
+    </div>
+
+    <div class="entry-form">
+      <label>Dollars Needed</label>
+      <br>
+      <input style="width:50px;" name="dollars">
+    </div>
+
+    <div class="entry-form">
+      <label>Hours Needed</label>
+      <br>
+      <input style="width:50px;" name="hours">
+    </div>
+
+    <div class="entry-form">
+      <label>Description</label>
+      <br>
+      <textarea style="width:500px; height:200px; ""name="description"></textarea>
+    </div>
+
+    <input type="submit" value="Submit">
+  </form>
+
+</div>
