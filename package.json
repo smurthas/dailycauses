@@ -8,8 +8,6 @@
     "dependencies": {
         "connect": "=1.1.4",
         "express": "=2.1.0",
-        "facebook-js": "=0.0.5",
-        "http-proxy": "=0.5.0",
         "mail": "=0.2.2",
         "mailchimp": "=0.6.0",
         "request": "=1.9.5"
