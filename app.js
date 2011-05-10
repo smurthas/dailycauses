@@ -34,10 +34,20 @@ app.post('/causes/:hood', function(req, res) {
 
 app.get('/causesbyhood/:hood', function(req, res) {
     var hood = req.params.hood;
-    db.getByHood(hood, function(causes) {
+    db.getByHood(hood, function(err, causes) {
         res.writeHead(200, {'content-type':'application/json'});
         res.end(JSON.stringify(causes));
     });
+});
+
+app.post('/signup', function(req, res) {
+    var addr = req.body.email;
+    db.signupUser(email, hood, function(err) {
+        res.writeHead(200);
+        res.end();
+    });
 })
 
-app.listen(8080);
+db.openCollection(function() {
+    app.listen(process.env.VMC_APP_PORT || 8080);
+});
