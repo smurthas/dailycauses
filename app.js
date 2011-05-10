@@ -30,7 +30,12 @@ app.post('/newcause', function(req, res) {
 });
 
 
-app.post
-
+app.get('/causesbyhood/:hood', function(req, res) {
+    var hood = req.params.hood;
+    db.getByHood(hood, function(causes) {
+        res.writeHead(200, {'content-type':'application/json'});
+        res.end(JSON.stringify(causes));
+    });
+})
 
 app.listen(8080);
