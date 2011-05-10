@@ -31,10 +31,10 @@ exports.openCollection = function(callback) {
 }
 
 exports.putInDB = function(title, desc, hood, numPeople, dollars, callback) {
-    
+    coll.save({title:title, desc:desc, hood:hood, numPeople:numPeople, dollars:dollars, date:new Date().getTime()}, callback);
 }
 
 
 exports.getByHood = function(hood, callback) {
-    
+    coll.find({hood:hood, date: {$gt:(new Date().getTime() - 24*60*60*1000)}}, callback);
 }
