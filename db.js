@@ -34,18 +34,21 @@ exports.openCollections = function(callback) {
 }
 
 exports.putInDB = function(title, desc, hood, numPeople, dollars, callback) {
-    causes.save({title:title, desc:desc, hood:hood, numPeople:numPeople, dollars:dollars, date:new Date().getTime()}, callback);
+    causes.save({title:title, desc:desc, hood:hood, numPeople:numPeople, dollars:dollars, contributors:[], date:new Date().getTime()}, callback);
 }
 
+exports.signup = function(name, addr, hood, callback) {
+    users.save({name:name, email:addr, hood:hood}, callback);
+}
 
-exports.signup = function(addr, hood, callback) {
-    users.save({email:addr, hood:hood}, callback);
+exports.contribute = function(_id, name, email, hours, dollars, callback) {
+    causes.update({_id:new ObjectID(_id)}, {contributors:{$addToSet:{name:name, email:email, hours:hours, dollars:dollars}}, callback);
+}
+
+exports.getCausesByHood = function(hood, callback) {
+    coll.find({hood:hood, date: {$gt:(new Date().getTime() - 24*60*60*1000)}}, callback);
 }
 
 exports.getUsersForHood = function(hood, callback) {
     users.find({hood:hood}, callback);
-}
-
-exports.getByHood = function(hood, callback) {
-    coll.find({hood:hood, date: {$gt:(new Date().getTime() - 24*60*60*1000)}}, callback);
 }
