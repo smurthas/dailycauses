@@ -61,6 +61,6 @@ app.post('contribute', function(req, res) {
 });
 
 
-db.openCollection(function() {
+db.openCollections(function() {
     app.listen(process.env.VMC_APP_PORT || 8080);
 });

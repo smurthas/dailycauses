@@ -42,7 +42,7 @@ exports.signup = function(name, addr, hood, callback) {
 }
 
 exports.contribute = function(_id, name, email, hours, dollars, callback) {
-    causes.update({_id:new ObjectID(_id)}, {contributors:{$addToSet:{name:name, email:email, hours:hours, dollars:dollars}}, callback);
+    causes.update({_id:new ObjectID(_id)}, {contributors:{$addToSet:{name:name, email:email, hours:hours, dollars:dollars}}}, callback);
 }
 
 exports.getCausesByHood = function(hood, callback) {
