@@ -1,0 +1,15 @@
+{
+    "name": "dailycauses",
+    "version": "0.0.0",
+    "homepage": "https://github.com/smurthasmith/dailycauses",
+    "engines": {
+        "node": ">= 0.4.6"
+    },
+    "dependencies": {
+        "connect": "=1.1.4",
+        "express": "=2.1.0",
+        "facebook-js": "=0.0.5",
+        "request": "=1.9.5",
+        "http-proxy": "=0.5.0",
+    }
+}
